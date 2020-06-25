@@ -11,8 +11,7 @@ def grafica(request):
 	dates=[]
 	p=Prices.objects.all()
 	prices=p.values()
-	print(f'len prices: {len(prices)}')
-	
+
 	for price in prices:
 		highs.append(float(price["high"]))
 		lows.append(float(price["low"]))
