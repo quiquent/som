@@ -17,8 +17,12 @@ def grafica(request):
 		lows.append(float(price["low"]))
 		dates.append(price["updatedAt"])
 
-	plt.plot(range(len(dates)), lows)
-	plt.plot(range(len(dates)), highs)
+	print(dates)
+
+	plt.plot(dates, lows)
+	plt.plot(dates, highs)
+	plt.xticks(rotation=90)
+	plt.tight_layout()
 	fig=plt.gcf()
 	buf=io.BytesIO()
 	fig.savefig(buf,format='png')
